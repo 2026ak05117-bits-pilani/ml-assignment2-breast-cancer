@@ -42,7 +42,7 @@ Github username: 2026ak05117-bits-pilani
 
 Repo: https://github.com/2026ak05117-bits-pilani/ml-assignment2-breast-cancer
 
-Live Streamlit App Link: https://ml-assignment2-breast-cancer.streamlit.app
+Live Streamlit App Link: https://2026ak05117-bits-pilani-ml-assignment2-breast-cancer-app-8c45ms.streamlit.app/
 
 ---
 
