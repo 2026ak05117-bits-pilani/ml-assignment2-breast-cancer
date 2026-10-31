@@ -42,17 +42,15 @@ Github username: 2026ak05117-bits-pilani
 
 Repo: https://github.com/2026ak05117-bits-pilani/ml-assignment2-breast-cancer
 
-Streamlit app: https://ml-assignment2-breast-cancer.streamlit.app  
-
-(If your streamlit URL is different, replace the link above with the exact deployed URL.)
+Live Streamlit App Link: https://ml-assignment2-breast-cancer.streamlit.app
 
 ---
 
 ## d. Models used
 
-All 5 models were trained on the same train split. I used StandardScaler inside Pipeline.
+All 5 models were trained on the same train split. I used StandardScaler inside Pipeline so preprocessing is saved with each model.
 
-### Comparison table
+### Comparison Table
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |---|---:|---:|---:|---:|---:|---:|
@@ -66,12 +64,12 @@ All 5 models were trained on the same train split. I used StandardScaler inside 
 
 | ML Model Name | Observation about model performance |
 |---|---|
-| Logistic Regression | Best overall. Highest accuracy, auc, f1 and mcc. |
-| Decision Tree | Lowest accuracy and auc among the five. |
-| KNN | High accuracy. Recall is 1.0 on this split. Scaling helped a lot. |
-| Naive Bayes | AUC is good but accuracy and mcc are lower. |
-| Support Vector Machine | Very close to logistic regression. Strong auc and precision. |
-| Overall Winner for your dataset? | Logistic Regression |
+| Logistic Regression | Best model on this dataset. Highest Accuracy (0.9860), AUC (0.9977), F1 and MCC. After scaling, a linear boundary separates malignant vs benign cases very well. |
+| Decision Tree | Weakest among the five. Accuracy 0.9371 and AUC 0.9186 are lowest. Tree with max_depth=5 is a bit unstable on these continuous medical features compared to LR/SVM. |
+| KNN | Strong Accuracy (0.9790). Recall is 1.0 on the test split, so it did not miss benign cases here. Needs scaling because it is distance based. Precision is slightly lower than LR/SVM. |
+| Naive Bayes | AUC is good (0.9878) but Accuracy and MCC are lower. GaussianNB assumes feature independence, which is not fully true for these correlated cell measurements. |
+| Support Vector Machine | Almost as good as Logistic Regression. AUC 0.9969 and strong Precision/F1. RBF kernel helps a little with mild non-linearity, but gain over LR is small on this data. |
+| Overall, Winner for your dataset? | Logistic Regression |
 
 ---
 
